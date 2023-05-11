@@ -4,8 +4,8 @@
 </h1>
 
 
-![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=VERSÃO&message=1.0.0&color=blue&style=for-the-badge)
-![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=DATA%20DA%20CRIAÇÃO&message=DEZ/22&color=blue&style=for-the-badge)
+![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=VERSÃO&message=5.0.0&color=blue&style=for-the-badge)
+![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=DATA%20DA%20CRIAÇÃO&message=MAI/23&color=blue&style=for-the-badge)
 
 > **Projeto com foco total na linguagem PHP POO com padrão MVC
 **

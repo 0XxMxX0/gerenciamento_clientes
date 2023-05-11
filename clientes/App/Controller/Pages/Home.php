@@ -150,7 +150,28 @@ class Home extends Page{
                     }
 
                     if(isset($_POST['btn-success'])){
-
+                        if( $_POST['email'] != ''){
+                            if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+                                throw new Exception('O campo <b>Email</b> é inválido!', 41);
+                            }
+                        }
+                        if($_POST['cpf'] != ''){
+                            if(strlen($_POST['cpf']) != 11) {
+                                throw new Exception('O campo <b>CPF</b> deve ter 11 dígitos!', 41);
+                            }
+                            if(!is_numeric($_POST['cpf'])){
+                                throw new Exception('O campo <b>CPF</b> deve conter apenas numeros', 41);
+                            }
+                        }
+                        if($_POST['telphone'] != ''){
+                            if(strlen($_POST['telphone']) != 11) {
+                                throw new Exception('O campo <b>Telefone</b> deve ter 11 dígitos!', 41);
+                            }
+                            if(!is_numeric($_POST['telphone'])){
+                                throw new Exception('O campo <b>Telefone</b> deve conter apenas numeros', 41);
+                            }
+                        }
+                        
                         $client = new \App\Model\Client($_GET['id'],
                             $_POST['name'] != '' ? $_POST['name'] : $client['Name'],
                             $_POST['email'] != '' ? $_POST['email'] : $client['Email'],

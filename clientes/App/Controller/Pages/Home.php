@@ -61,19 +61,19 @@ class Home extends Page{
                                             </div>
                                             <div class="form-floating mb-3">
                                                 <input type="email" class="form-control" autocomplete="off" name="email" id="email" placeholder="E-mail do Cliente">
-                                                <label for="floatingPassword">E-mail do Cliente</label>
+                                                <label for="email">E-mail do Cliente</label>
                                             </div>
                                             <div class="form-floating mb-3">
                                                 <input type="number" class="form-control" autocomplete="off" name="telphone" id="telphone" placeholder="Telefone do Cliente">
-                                                <label for="floatingPassword">Telefone do Cliente</label>
+                                                <label for="telphone">Telefone do Cliente</label>
                                             </div>
                                             <div class="form-floating">
                                                 <input type="number"  class="form-control" autocomplete="off" name="cpf" id="cpf" placeholder="CPF do Cliente">
-                                                <label for="floatingPassword">CPF do Cliente</label>
+                                                <label for="cpf">CPF do Cliente</label>
                                             </div>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="submit" name="btn-cancel" id="btn-cancel" class="btn btn-outline-danger" data-bs-dismiss="modal">Cancelar</button>
+                                            <a name="btn-cancel" id="btn-cancel" class="btn btn-outline-danger" data-bs-dismiss="modal">Cancelar</a>
                                             <button type="submit" name="btn-success" id="btn-success" class="btn btn-primary">Adicionar</button>
                                         </div>
                                     </div>
@@ -83,17 +83,21 @@ class Home extends Page{
                     <?php
 
                     if(isset($_POST['btn-success'])){
+                       
                         if(empty($_POST['name']) || empty($_POST['email']) || empty($_POST['telphone']) || empty($_POST['cpf'])) {
                             throw new Exception('Todos os campos são obrigatórios!', 41);
                         }
                         if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
                             throw new Exception('O campo <b>Email</b> é inválido!', 41);
                         }
+                        if(strlen($_POST['cpf']) != 11) {
+                            throw new Exception('O campo <b>CPF</b> deve ter 11 dígitos!', 41);
+                        }
                         $client = new \App\Model\Client('', $_POST['name'], $_POST['email'], $_POST['telphone'], $_POST['cpf']);
+                        var_dump($client);
                         $clientDao->create($client);
                         $_SESSION['messagerBar'] = ['alert' => 'success', 'messeger' => 'Cliente cadastrado com sucesso!'];
                         header('Location: index.php');
-                        
                     } else if(isset($_POST['btn-cancel'])){
                         throw new Exception('Ação Cancelada!', 40);
                     }
@@ -127,7 +131,7 @@ class Home extends Page{
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="submit" name="btn-cancel" id="btn-cancel" class="btn btn-outline-danger" data-bs-dismiss="modal">Cancelar</button>
+                                                <a name="btn-cancel" id="btn-cancel" class="btn btn-outline-danger" data-bs-dismiss="modal">Cancelar</a>
                                                 <button type="submit" name="btn-success" id="btn-success" class="btn btn-primary">Adicionar</button>
                                             </div>
                                         </div>
@@ -165,7 +169,7 @@ class Home extends Page{
                                         <p>Você realmente deseja apagar esse cliente?</p>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="submit" name="btn-cancel" id="btn-cancel" class="btn btn-outline-secondary" data-bs-dismiss="modal">fechar</button>
+                                        <a type="submit" name="btn-cancel" id="btn-cancel" class="btn btn-outline-secondary" data-bs-dismiss="modal">fechar</a>
                                         <button type="submit" name="btn-danger" id="btn-danger" class="btn btn-danger">Apagar</button>
                                     </div>
                                 </div>

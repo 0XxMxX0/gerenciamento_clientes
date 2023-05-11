@@ -150,7 +150,7 @@ class Home extends Page{
                             $_POST['cpf'] != '' ? $_POST['cpf'] : $client['Cpf']
                         );
                         $clientDao->update($client);
-                        header('Location: http://matheus.com/projetos/clientes/');
+                        header('Location: index.php');
 
                     } else if(isset($_POST['btn-cancel'])){
                         throw new Exception('Ação Cancelada!', 40);

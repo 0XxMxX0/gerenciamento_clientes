@@ -73,7 +73,7 @@ class Home extends Page{
                                             </div>
                                         </div>
                                         <div class="modal-footer">
-                                            <a name="btn-cancel" id="btn-cancel" class="btn btn-outline-danger" data-bs-dismiss="modal">Cancelar</a>
+                                            <button name="btn-cancel" id="btn-cancel" class="btn btn-outline-danger" data-bs-dismiss="modal">Cancelar</button>
                                             <button type="submit" name="btn-success" id="btn-success" class="btn btn-primary">Adicionar</button>
                                         </div>
                                     </div>
@@ -131,7 +131,7 @@ class Home extends Page{
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
-                                                <a name="btn-cancel" id="btn-cancel" class="btn btn-outline-danger" data-bs-dismiss="modal">Cancelar</a>
+                                                <button name="btn-cancel" id="btn-cancel" class="btn btn-outline-danger" data-bs-dismiss="modal">Cancelar</button>
                                                 <button type="submit" name="btn-success" id="btn-success" class="btn btn-primary">Adicionar</button>
                                             </div>
                                         </div>
@@ -169,7 +169,7 @@ class Home extends Page{
                                         <p>Você realmente deseja apagar esse cliente?</p>
                                     </div>
                                     <div class="modal-footer">
-                                        <a type="submit" name="btn-cancel" id="btn-cancel" class="btn btn-outline-secondary" data-bs-dismiss="modal">fechar</a>
+                                        <button type="submit" name="btn-cancel" id="btn-cancel" class="btn btn-outline-secondary" data-bs-dismiss="modal">fechar</button>
                                         <button type="submit" name="btn-danger" id="btn-danger" class="btn btn-danger">Apagar</button>
                                     </div>
                                 </div>

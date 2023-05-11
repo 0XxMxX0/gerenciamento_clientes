@@ -56,7 +56,7 @@ class Home extends Page{
                                         </div>
                                         <div class="modal-body">
                                             <div class="form-floating mb-3">
-                                                <input type="text" class="form-control" autocomplete="off" name="name" id="name" placeholder="Nome do Cliente">
+                                                <input type="text" class="form-control"  autocomplete="off" name="name" id="name" placeholder="Nome do Cliente">
                                                 <label for="floatingInput">Nome do Cliente</label>
                                             </div>
                                             <div class="form-floating mb-3">
@@ -64,11 +64,11 @@ class Home extends Page{
                                                 <label for="email">E-mail do Cliente</label>
                                             </div>
                                             <div class="form-floating mb-3">
-                                                <input type="number" class="form-control" autocomplete="off" name="telphone" id="telphone" placeholder="Telefone do Cliente">
+                                                <input type="text" class="form-control" autocomplete="off" maxlength="11" name="telphone" id="telphone" placeholder="Telefone do Cliente">
                                                 <label for="telphone">Telefone do Cliente</label>
                                             </div>
                                             <div class="form-floating">
-                                                <input type="number"  class="form-control" autocomplete="off" name="cpf" id="cpf" placeholder="CPF do Cliente">
+                                                <input type="text"  class="form-control" autocomplete="off" maxlength="11" name="cpf" id="cpf" placeholder="CPF do Cliente">
                                                 <label for="cpf">CPF do Cliente</label>
                                             </div>
                                         </div>
@@ -93,11 +93,16 @@ class Home extends Page{
                         if(strlen($_POST['cpf']) != 11) {
                             throw new Exception('O campo <b>CPF</b> deve ter 11 dígitos!', 41);
                         }
-                        if(strlen($_POST['telphone']) != 10) {
+                        if(!is_numeric($_POST['cpf'])){
+                            throw new Exception('O campo <b>CPF</b> deve conter apenas numeros', 41);
+                        }
+                        if(strlen($_POST['telphone']) != 11) {
                             throw new Exception('O campo <b>Telefone</b> deve ter 11 dígitos!', 41);
                         }
+                        if(!is_numeric($_POST['telphone'])){
+                            throw new Exception('O campo <b>Telefone</b> deve conter apenas numeros', 41);
+                        }
                         $client = new \App\Model\Client('', $_POST['name'], $_POST['email'], $_POST['telphone'], $_POST['cpf']);
-                        var_dump($client);
                         $clientDao->create($client);
                         $_SESSION['messagerBar'] = ['alert' => 'success', 'messeger' => 'Cliente cadastrado com sucesso!'];
                         header('Location: index.php');

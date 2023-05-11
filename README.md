@@ -27,7 +27,7 @@
 - `Passo 2`: Com o arquivo SQL, abra o seu banco de dados e o execute para ter a tabela CLIENT que é necessaria para esse codigo funcionar. 
 - `Passo 3`: Depois de configurar o banco de dados será necessario ter um serve local para rodar esse codigo internamente, recomendo o XAMP, mas se o seu for um linux terá que baixar o LAMP e colocar esse codigo no diretorio /VAR/WWW. Veja o video abaixo para configurar o LAMP no Ubuntu
 - https://www.youtube.com/watch?v=saMOWPbZncs&ab_channel=EstudonautaCursos 
-- `Passo 4`: Com o arquivo SQL, abra o seu banco de dados e execute a query.
+- `Passo 4`: Com o arquivo SQL, abra o seu banco de dados e execute a query e execute o codigo em sua maquina.
 
 > 
 

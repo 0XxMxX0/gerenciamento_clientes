@@ -15,7 +15,6 @@ class ClientDao{
         $insert->bindvalue(3, $client->getTelphone());
         $insert->bindvalue(4, $client->getCpf());
         $insert->execute();
-        var_dump($insert->execute());
     }
 
     public function read($id){

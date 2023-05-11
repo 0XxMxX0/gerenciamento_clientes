@@ -93,6 +93,9 @@ class Home extends Page{
                         if(strlen($_POST['cpf']) != 11) {
                             throw new Exception('O campo <b>CPF</b> deve ter 11 dígitos!', 41);
                         }
+                        if(strlen($_POST['telphone']) != 10) {
+                            throw new Exception('O campo <b>Telefone</b> deve ter 11 dígitos!', 41);
+                        }
                         $client = new \App\Model\Client('', $_POST['name'], $_POST['email'], $_POST['telphone'], $_POST['cpf']);
                         var_dump($client);
                         $clientDao->create($client);

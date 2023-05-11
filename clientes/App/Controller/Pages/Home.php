@@ -171,15 +171,18 @@ class Home extends Page{
                                 throw new Exception('O campo <b>Telefone</b> deve conter apenas numeros', 41);
                             }
                         }
-                        
-                        $client = new \App\Model\Client($_GET['id'],
-                            $_POST['name'] != '' ? $_POST['name'] : $client['Name'],
-                            $_POST['email'] != '' ? $_POST['email'] : $client['Email'],
-                            $_POST['telphone'] != '' ? $_POST['telphone'] : $client['TelPhone'],
-                            $_POST['cpf'] != '' ? $_POST['cpf'] : $client['Cpf']
-                        );
-                        $clientDao->update($client);
-                        header('Location: index.php');
+                        if($_POST['name'] != '' OR $_POST['email'] != '' OR  $_POST['telphone'] != '' OR $_POST['cpf'] != ''){
+                            $client = new \App\Model\Client($_GET['id'],
+                                $_POST['name'] != '' ? $_POST['name'] : $client['Name'],
+                                $_POST['email'] != '' ? $_POST['email'] : $client['Email'],
+                                $_POST['telphone'] != '' ? $_POST['telphone'] : $client['TelPhone'],
+                                $_POST['cpf'] != '' ? $_POST['cpf'] : $client['Cpf']
+                            );
+                            $clientDao->update($client);
+                            header('Location: index.php');
+                        } else {
+                            throw new Exception('Nenhum dado alterado!', 40);
+                        }
 
                     } else if(isset($_POST['btn-cancel'])){
                         throw new Exception('Ação Cancelada!', 40);

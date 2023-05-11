@@ -28,10 +28,10 @@ CREATE TABLE `client` (
   `Id_Client` int NOT NULL AUTO_INCREMENT,
   `Name` varchar(100) DEFAULT NULL,
   `Email` varchar(50) DEFAULT NULL,
-  `TelPhone` int DEFAULT NULL,
+  `TelPhone` varchar(11) DEFAULT NULL,
   `Cpf` varchar(11) DEFAULT NULL,
   PRIMARY KEY (`Id_Client`)
-) ENGINE=MyISAM AUTO_INCREMENT=62 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=64 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +40,7 @@ CREATE TABLE `client` (
 
 LOCK TABLES `client` WRITE;
 /*!40000 ALTER TABLE `client` DISABLE KEYS */;
-INSERT INTO `client` VALUES (58,'Maria','maria@dominio.com.br',2147483647,'52531402047'),(57,'Pedro','pedro@site.com',2147483647,'08438868460'),(59,'Paulo','paulo@hostname.com',1144556677,'33564705589'),(60,'José','jose@carpinteiro.com',2147483647,'43203873842'),(61,'Marcos','marcos@aaa.com',418887777,'22274350035');
+INSERT INTO `client` VALUES (62,'ccccccccc','colegioipa.ti01@gmail.com','2147483647','19835152721'),(57,'Pedro','pedro@site.com','2147483647','08438868460');
 /*!40000 ALTER TABLE `client` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-05-11 12:25:09
+-- Dump completed on 2023-05-11 17:13:23
